@@ -1,0 +1,30 @@
+<%- include("header") -%>
+
+    <div class="box" id="heading">
+        <h1>
+            <%= ListTitle %>
+        </h1>
+    </div>
+
+   <div class="box">
+        <!-- below line is js code so need not to use <%= listofItems %> here -->
+        <% for(var i=0;i<listofItems.length;i++){ %>
+        <div class="item">
+            <input type="checkbox">
+            <p>
+                <%= listofItems[i]; %>
+                <!-- But above line is not js code, we are using it inside ejs for our basic purpose -->
+            </p>
+        </div>
+        <% } %>
+        <!-- Above line is again js code -->
+
+        <form class="item" action="/" method="post">
+            <input type="text" name="toDoItem" id="" placeholder="New Item" autocomplete="off">
+            <button type="submit" name="list" value="<%= ListTitle %>">+</button>
+        </form>
+    </div>
+
+<%-include("footer")-%>   
+
+
